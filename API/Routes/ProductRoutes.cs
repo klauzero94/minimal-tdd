@@ -65,7 +65,6 @@ public class ProductRoutes
         .Produces<Response<object, Error>>(StatusCodes.Status204NoContent)
         .Produces<Response<object, Error>>(StatusCodes.Status429TooManyRequests)
         .Produces<Response<object, Error>>(StatusCodes.Status500InternalServerError)
-        .RequireRateLimiting(RateLimitingPolicy.Fixed)
         .WithName(Paths.GetProducts.Name)
         .WithTags(Paths.GetProducts.Tags);
         #endregion
