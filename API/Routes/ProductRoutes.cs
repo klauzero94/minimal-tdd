@@ -58,7 +58,7 @@ public class ProductRoutes
             var output = await _productService.GetProducts(name, page, size);
             httpContext.Response.Headers.Add(HeadersProp.XTotalCount, output.Item2.ToString());
             return Results.Ok(new Response(
-                "201", true, data: output.Item1
+                "200", true, data: output.Item1
             ));
         })
         .Produces<Response<List<ProductOutput>, object>>(StatusCodes.Status200OK)
