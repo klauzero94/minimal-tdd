@@ -13,8 +13,8 @@ public static class ConfigureKernel
         services.AddRateLimiter(_ => _
             .AddFixedWindowLimiter(policyName: RateLimitingPolicy.Fixed, options =>
             {
-                options.PermitLimit = 5;
-                options.Window = TimeSpan.FromSeconds(20);
+                options.PermitLimit = 20;
+                options.Window = TimeSpan.FromSeconds(5);
                 options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
                 options.QueueLimit = 0;
             }).RejectionStatusCode = 429);
